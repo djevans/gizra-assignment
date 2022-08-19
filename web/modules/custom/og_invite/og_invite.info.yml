@@ -1,0 +1,8 @@
+name: "Organic Groups Invite"
+type: module
+description: "Invite registered users to join Organic groups."
+core_version_requirement: ^8 || ^9
+package: "Custom"
+
+dependencies:
+  - og
