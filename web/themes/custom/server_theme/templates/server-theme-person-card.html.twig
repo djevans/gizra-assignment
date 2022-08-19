@@ -1,0 +1,30 @@
+<div class="bg-white w-80 border-1 shadow rounded-lg">
+  <figure class="flex flex-col items-center border-b p-8">
+    <a href="#">
+      <img class="rounded-full" src="{{ image_url }}" alt="{{ name }}" width="128" height="128">
+    </a>
+    <figcaption class="pt-6 flex flex-col gap-1 items-center">
+      <div class="gray-900 text-sm">{{ name }}</div>
+      <div class="text-gray-500 text-sm">{{ title }}</div>
+      <div>
+      {% for tag in tags %}
+        <span class="text-xs tags-wrapper bg-green-100 rounded-xl px-2 py-1 mt-2 mx-1">
+          <a href="#">{{ tag }}</a>
+        </span>
+      {% endfor %}
+      </div>
+    </figcaption>
+  </figure>
+  <div class="flex flex-row divide-x">
+    {% if email %}
+    <div class="py-4 flex-grow text-center">
+      <a href="mailto:{{ email }}" class="text-sm text-gray-700">Email</a>
+    </div>
+    {% endif %}
+    {% if phone %}
+    <div class="py-4 flex-grow text-center">
+      <a href="tel:{{ phone }}" class="text-sm text-gray-700">Call</a>
+    </div>
+    {% endif %}
+  </div>
+</div>
