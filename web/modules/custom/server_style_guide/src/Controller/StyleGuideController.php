@@ -151,6 +151,20 @@ class StyleGuideController extends ControllerBase {
     ];
     $build[] = $this->wrapElementWideContainer($element, 'Cards');
 
+    $element = $this->getPersonCard();
+
+    $build[] = $this->wrapElementWideContainer($element, 'Person Card');
+
+    $items = [];
+    for ($i = 1; $i <= 10; $i++) {
+      $items[] = $this->getPersonCard();
+    }
+    $element = [
+      '#theme' => 'server_theme_person_card__grid',
+      '#items' => $items,
+    ];
+    $build[] = $this->wrapElementWideContainer($element, 'Person Card Grid');
+
     $element = [
       '#theme' => 'server_theme_content__tags',
       '#tags' => $many_tags,
@@ -281,6 +295,24 @@ class StyleGuideController extends ControllerBase {
     ]);
 
     return $this->buildTag($dummy_term);
+  }
+
+  /**
+   * Get a person card.
+   *
+   * @return array
+   *   The renderable array.
+   */
+  protected function getPersonCard(): array {
+    return [
+      '#theme' => 'server_theme_person_card',
+      '#image_url' => $this->getPlaceholderPersonImage(128, 128),
+      '#name' => 'Jane Cooper',
+      '#title' => 'Paradigm Representation',
+      '#tags' => ['Admin'],
+      '#email' => 'jane.cooper@example.com',
+      '#phone' => '+4418118055',
+    ];
   }
 
 }
