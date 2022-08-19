@@ -1,0 +1,37 @@
+<?php
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+use Drupal\og\Og;
+use Drupal\og\OgMembershipInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_view() for node entities.
+ */
+function og_invite_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  if ($view_mode != 'full') {
+    return;
+  }
+  if (!Og::isGroup('node', $node->bundle())) {
+    return;
+  }
+  $account = \Drupal::currentUser();
+  if ($account->isAnonymous()) {
+    return;
+  }
+  if (Og::isMember($node, $account)) {
+    return;
+  }
+  $url = Url::fromRoute('og.subscribe', [
+    'entity_type_id' => 'node',
+    'group' => $node->id(),
+    'og_membership_type' => OgMembershipInterface::TYPE_DEFAULT,
+  ]);
+  $message = t('Hi @user_name, @click_here if you would like to subscribe to this group called @group_name', [
+    '@click_here' => Drupal::linkGenerator()->generate('click here', $url),
+    '@user_name' => $account->getDisplayName(),
+    '@group_name' => $node->label(),
+  ]);
+  \Drupal::messenger()->addStatus($message, TRUE);
+}
