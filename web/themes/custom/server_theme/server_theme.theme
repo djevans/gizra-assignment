@@ -117,6 +117,23 @@ function server_theme_theme() {
     ],
   ];
 
+  $info['server_theme_person_card'] = [
+    'variables' => [
+      'image_url' => NULL,
+      'name' => NULL,
+      'title' => NULL,
+      'tags' => [],
+      'email' => NULL,
+      'phone' => NULL,
+    ],
+  ];
+
+  $info['server_theme_person_card__grid'] = [
+    'variables' => [
+      'items' => [],
+    ],
+  ];
+
   return $info;
 }
 
