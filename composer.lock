@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a1cde962092d3eaada323ab34b78234",
+    "content-hash": "8d957196daff5237afda06df52701ec1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2869,6 +2869,104 @@
                 "source": "https://git.drupalcode.org/project/migrate_tools",
                 "issues": "https://www.drupal.org/project/issues/migrate_tools",
                 "slack": "#migrate"
+            }
+        },
+        {
+            "name": "drupal/og",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/og.git",
+                "reference": "dec6a56b3a4ac1bbffb7897fabb4d459d36ca3c1"
+            },
+            "require": {
+                "drupal/core": "^9.2",
+                "php": "^7.4 || ^8"
+            },
+            "require-dev": {
+                "drupal/coder": "^8.2",
+                "phpunit/phpunit": "^7 || ^8",
+                "slevomat/coding-standard": "~6.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1626945490",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "amitaibu",
+                    "homepage": "https://www.drupal.org/u/amitaibu"
+                },
+                {
+                    "name": "mpp",
+                    "homepage": "https://www.drupal.org/u/mpp"
+                },
+                {
+                    "name": "pfrenssen",
+                    "homepage": "https://www.drupal.org/u/pfrenssen"
+                },
+                {
+                    "name": "Zen",
+                    "homepage": "https://www.drupal.org/user/21209"
+                },
+                {
+                    "name": "alesr",
+                    "homepage": "https://www.drupal.org/user/150704"
+                },
+                {
+                    "name": "amitaibu",
+                    "homepage": "https://www.drupal.org/user/57511"
+                },
+                {
+                    "name": "dww",
+                    "homepage": "https://www.drupal.org/user/46549"
+                },
+                {
+                    "name": "joelpittet",
+                    "homepage": "https://www.drupal.org/user/160302"
+                },
+                {
+                    "name": "merlinofchaos",
+                    "homepage": "https://www.drupal.org/user/26979"
+                },
+                {
+                    "name": "moshe weitzman",
+                    "homepage": "https://www.drupal.org/user/23"
+                },
+                {
+                    "name": "mpp",
+                    "homepage": "https://www.drupal.org/user/359881"
+                },
+                {
+                    "name": "pfrenssen",
+                    "homepage": "https://www.drupal.org/user/382067"
+                },
+                {
+                    "name": "sethcohn",
+                    "homepage": "https://www.drupal.org/user/14944"
+                }
+            ],
+            "description": "API to allow associating content with groups.",
+            "homepage": "https://drupal.org/project/og",
+            "support": {
+                "source": "https://git.drupalcode.org/project/og",
+                "issues": "https://drupal.org/project/issues/og",
+                "irc": "irc://irc.freenode.org/drupal-og",
+                "slack": "https://drupal.slack.com/messages/CELR48EA0"
             }
         },
         {
@@ -12236,6 +12334,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/elasticsearch_connector": 15,
+        "drupal/og": 20,
         "drupal/redis": 20,
         "drupal/viewsreference": 10
     },
@@ -12247,5 +12346,5 @@
         "ext-mbstring": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
